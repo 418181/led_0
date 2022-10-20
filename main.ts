@@ -22,8 +22,8 @@ function 燈號 (num: number) {
     } else if (num >= 21 && num <= 23) {
         x = 24 - num
         y = 3
-    } else if (num >= 24 && num <= 26) {
-        x = 25 - num
+    } else if (num >= 24 && num <= 25) {
+        x = num - 23
         y = 2
     } else {
     	
