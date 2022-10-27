@@ -31,6 +31,19 @@ function 燈號2 (num: number) {
     }
     led.unplot(x, y)
 }
+input.onButtonPressed(Button.A, function () {
+    a = 0
+    for (let index = 0; index < 25; index++) {
+        a += 1
+        燈號(a)
+        basic.pause(100)
+    }
+    for (let index = 0; index < 25; index++) {
+        燈號2(a)
+        a += -1
+        basic.pause(100)
+    }
+})
 function 燈號 (num: number) {
     x = 0
     y = 0
@@ -64,20 +77,23 @@ function 燈號 (num: number) {
     }
     led.plot(x, y)
 }
-let y = 0
-let x = 0
-let a = 0
-basic.forever(function () {
-    a = 0
+input.onButtonPressed(Button.B, function () {
+    a = 25
     for (let index = 0; index < 25; index++) {
-        a += 1
         燈號(a)
+        a += -1
         basic.pause(100)
     }
-    a += 1
     for (let index = 0; index < 25; index++) {
-        a += -1
+        a += 1
         燈號2(a)
         basic.pause(100)
     }
+})
+let y = 0
+let x = 0
+let a = 0
+a = 0
+basic.forever(function () {
+	
 })
